@@ -51,7 +51,7 @@ const Hero = () => {
             className="text-lg mb-8 max-w-lg text-gray-700 dark:text-gray-400"
             variants={itemVariants}
           >
-            I create beautiful and functional web applications with a focus on user experience and performance.
+            I create insightful and functional web applications with a focus on user experience and performance.
           </motion.p>
           
           <motion.div 
