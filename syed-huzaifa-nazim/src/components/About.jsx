@@ -63,13 +63,19 @@ const About = () => {
           >
             <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Who I Am</h3>
             <p className="mb-4 text-gray-700 dark:text-gray-300">
-              I'm a passionate developer/designer with X years of experience creating 
-              digital solutions for clients across various industries. My approach 
-              combines technical expertise with creative problem-solving.
+              I'm a passionate Web Developer currently pursuing a Bachelor's degree in
+               Artificial Intelligence from DUET. With hands-on experience in technologies
+                like React.js, Next.js, Node.js, and MongoDB, I enjoy building full-stack 
+                applications that solve real-world problems. My journey includes developing 
+                dynamic systems such as a family networking platform, a course enrollment app, 
+                and microfinance solutions during hackathons.
             </p>
             <p className="mb-6 text-gray-700 dark:text-gray-300">
-              When I'm not coding, you can find me [hobbies/interests]. I believe 
-              in continuous learning and staying updated with the latest industry trends.
+              Beyond academics, I’ve explored modern frameworks like Remix.js and 
+              Shopify App development, continuously challenging myself to learn and adapt. 
+              I value clean code, user-focused design, and scalable architecture. 
+              Whether working solo or collaborating with teams, I'm always striving to
+               build impactful and innovative digital experiences.
             </p>
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -86,7 +92,7 @@ const About = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-blue-600 dark:text-yellow-300">Experience:</h4>
-                <p className="text-gray-700 dark:text-gray-300">X+ Years</p>
+                <p className="text-gray-700 dark:text-gray-300">3+ Years</p>
               </div>
             </div>
           </motion.div>
