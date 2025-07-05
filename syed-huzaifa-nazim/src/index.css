@@ -74,3 +74,25 @@ button:focus-visible {
 html {
   scroll-behavior: smooth;
 }
+
+:root {
+  --body: #ffffff;
+  --text: #1a1a1a;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1d4ed8;
+  /* ... and so on for all theme properties */
+}
+
+.dark {
+  --body: #111827;
+  --text: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --primary: #f59e0b;
+  --primary-light: #fbbf24;
+  --primary-dark: #d97706;
+  /* ... and so on for all dark theme properties */
+}

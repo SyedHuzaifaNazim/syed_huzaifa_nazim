@@ -1,44 +1,103 @@
-export default function Skills() {
+// src/components/Skills.jsx (updated with animations)
+import { motion } from 'framer-motion'
+
+const Skills = () => {
   const skills = [
-    { category: 'Frontend', techs: ['React', 'Next', 'Tailwind CSS', 'JavaScript'] },
-    { category: 'Backend', techs: ['Node.js', 'Express', 'Python', 'Django'] },
-    { category: 'Database', techs: ['MongoDB', 'MySQL', 'Firebase', 'Oracle'] },
-    { category: 'DevOps', techs: ['Docker', 'AWS', 'CI/CD', 'Kubernetes'] }
-  ];
+    { name: 'JavaScript', level: 90 },
+    { name: 'React', level: 85 },
+    { name: 'Node.js', level: 80 },
+    { name: 'UI/UX Design', level: 75 },
+    { name: 'CSS/Tailwind', level: 90 },
+    { name: 'Python', level: 70 },
+  ]
+
+  const professionalSkills = ['Communication', 'Teamwork', 'Problem Solving', 'Creativity', 'Time Management', 'Leadership']
+
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  }
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
+  }
 
   return (
-    <section id="skills" className="py-20 px-6 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center dark:text-white">
-          Technical Skills
-        </h2>
+    <section id="skills" className="py-16 bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-6">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">My Skills</h2>
+          <div className="w-20 h-1 bg-blue-600 dark:bg-yellow-300 mx-auto"></div>
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {skills.map((skill, index) => (
-            <div 
-              key={index} 
-              className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition"
-            >
-              <h3 className="text-xl font-semibold mb-4 text-indigo-600 dark:text-indigo-400">
-                {skill.category}
-              </h3>
-              <div className="space-y-3">
-                {skill.techs.map((tech, i) => (
-                  <div key={i} className="flex items-center">
-                    <div className="w-full bg-gray-200 dark:bg-gray-600 h-2 rounded-full">
-                      <div 
-                        className="bg-indigo-600 h-2 rounded-full" 
-                        style={{ width: `${Math.floor(Math.random() * 40) + 60}%` }}
-                      ></div>
-                    </div>
-                    <span className="ml-3 dark:text-gray-300">{tech}</span>
-                  </div>
-                ))}
+        <motion.div 
+          className="grid md:grid-cols-2 gap-8"
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.div variants={item}>
+            <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">Technical Skills</h3>
+            {skills.map((skill, index) => (
+              <div key={index} className="mb-4">
+                <div className="flex justify-between mb-1">
+                  <span className="text-gray-700 dark:text-gray-300">{skill.name}</span>
+                  <span className="text-gray-700 dark:text-gray-300">{skill.level}%</span>
+                </div>
+                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                  <motion.div 
+                    className="bg-blue-600 dark:bg-yellow-300 h-2.5 rounded-full" 
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: index * 0.1 }}
+                  />
+                </div>
               </div>
+            ))}
+          </motion.div>
+          
+          <motion.div variants={item}>
+            <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">Professional Skills</h3>
+            <div className="grid grid-cols-2 gap-4">
+              {professionalSkills.map((skill, index) => (
+                <motion.div 
+                  key={index}
+                  className="flex items-center p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="p-2 mr-3 bg-blue-100 dark:bg-yellow-100 dark:bg-opacity-20 rounded-full">
+                    <svg className="w-5 h-5 text-blue-600 dark:text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700 dark:text-gray-300">{skill}</span>
+                </motion.div>
+              ))}
             </div>
-          ))}
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
-  );
+  )
 }
+
+export default Skills
