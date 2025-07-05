@@ -1,8 +1,8 @@
 export default function Skills() {
   const skills = [
-    { category: 'Frontend', techs: ['React', 'Vue', 'Tailwind CSS', 'JavaScript'] },
+    { category: 'Frontend', techs: ['React', 'Next', 'Tailwind CSS', 'JavaScript'] },
     { category: 'Backend', techs: ['Node.js', 'Express', 'Python', 'Django'] },
-    { category: 'Database', techs: ['MongoDB', 'PostgreSQL', 'Firebase', 'Redis'] },
+    { category: 'Database', techs: ['MongoDB', 'MySQL', 'Firebase', 'Oracle'] },
     { category: 'DevOps', techs: ['Docker', 'AWS', 'CI/CD', 'Kubernetes'] }
   ];
 
