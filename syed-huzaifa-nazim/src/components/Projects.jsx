@@ -13,13 +13,13 @@ const Projects = () => {
       title: 'Task Management App',
       description: 'Productivity application for team collaboration and task tracking.',
       tags: ['React', 'Firebase', 'Tailwind CSS'],
-      image: 'https://via.placeholder.com/600x400'
+      image: 'https://embed-ssl.wistia.com/deliveries/4097039cdac9311d5cfa8a8e10502178.jpg?image_crop_resized=900x506'
     },
     {
       title: 'Portfolio Website',
       description: 'Custom designed and developed portfolio for a creative professional.',
       tags: ['Next.js', 'Framer Motion', 'SCSS'],
-      image: 'https://via.placeholder.com/600x400'
+      image: 'https://cdn1.vectorstock.com/i/1000x1000/78/45/portfolio-banner-with-colorful-confetti-vector-21757845.jpg'
     }
   ]
 
