@@ -2,22 +2,16 @@
 const Experience = () => {
   const experiences = [
     {
-      role: 'Senior Developer',
-      company: 'Tech Solutions Inc.',
-      period: '2020 - Present',
+      role: 'Full Stack Developer',
+      company: 'Tax Filerz & Co.',
+      period: '2025 - Present',
       description: 'Lead development team building enterprise applications. Implemented CI/CD pipelines and improved deployment processes.'
     },
     {
       role: 'Frontend Developer',
-      company: 'Digital Agency',
-      period: '2018 - 2020',
+      company: 'Self -Employed',
+      period: '2024 - 2025',
       description: 'Developed responsive websites and web applications for various clients. Collaborated with designers to implement UI/UX.'
-    },
-    {
-      role: 'Junior Developer',
-      company: 'Startup Company',
-      period: '2016 - 2018',
-      description: 'Assisted in building MVP products. Learned modern development practices and frameworks.'
     }
   ]
 

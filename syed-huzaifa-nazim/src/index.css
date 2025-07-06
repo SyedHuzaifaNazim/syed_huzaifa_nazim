@@ -67,32 +67,45 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
 :root {
-  --body: #ffffff;
-  --text: #1a1a1a;
-  --text-secondary: #4b5563;
-  --text-muted: #6b7280;
-  --primary: #2563eb;
-  --primary-light: #3b82f6;
-  --primary-dark: #1d4ed8;
-  /* ... and so on for all theme properties */
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-primary: #2563eb;
+  --color-secondary: #f3f4f6;
+  --color-card: #ffffff;
+  --color-border: #e5e7eb;
 }
 
 .dark {
-  --body: #111827;
-  --text: #f9fafb;
-  --text-secondary: #d1d5db;
-  --text-muted: #9ca3af;
-  --primary: #f59e0b;
-  --primary-light: #fbbf24;
-  --primary-dark: #d97706;
-  /* ... and so on for all dark theme properties */
+  --color-bg: #111827;
+  --color-text: #f9fafb;
+  --color-primary: #f59e0b;
+  --color-secondary: #1f2937;
+  --color-card: #1f2937;
+  --color-border: #374151;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Example of using the variables */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
 }
