@@ -1,6 +1,7 @@
 // src/components/Header.jsx
 import { useEffect, useRef } from 'react'
 import ThemeToggle from './ThemeToggle'
+import logo from '../assets/logo.svg' // Add this line
 
 const Header = () => {
   const headerRef = useRef(null)
@@ -8,7 +9,6 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
-        // Add solid background and shadow when scrolled
         headerRef.current.classList.add(
           'bg-white',
           'dark:bg-gray-900',
@@ -17,7 +17,6 @@ const Header = () => {
         )
         headerRef.current.classList.remove('bg-transparent')
       } else {
-        // Revert to transparent background on top of page
         headerRef.current.classList.remove(
           'bg-white',
           'dark:bg-gray-900',
@@ -39,10 +38,17 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary">
-            Syed Huzaifa Nazim
+          {/* LOGO + NAME */}
+          <div className="flex items-center space-x-2">
+            <a href="#home" className="flex items-center space-x-2">
+            <img src={logo} alt="Logo" className="w-10 h-10" />
+            <span className="text-2xl font-bold text-primary">
+              Syed Huzaifa Nazim
+            </span>
+            </a>
           </div>
 
+          {/* NAVIGATION */}
           <nav className="hidden md:flex space-x-8">
             <a href="#about" className="hover:text-primary transition-colors">
               About
@@ -53,10 +59,7 @@ const Header = () => {
             <a href="#projects" className="hover:text-primary transition-colors">
               Projects
             </a>
-            <a
-              href="#experience"
-              className="hover:text-primary transition-colors"
-            >
+            <a href="#experience" className="hover:text-primary transition-colors">
               Experience
             </a>
             <a href="#contact" className="hover:text-primary transition-colors">
@@ -64,6 +67,7 @@ const Header = () => {
             </a>
           </nav>
 
+          {/* TOGGLE + RESUME */}
           <div className="flex items-center space-x-4">
             <ThemeToggle />
             <button className="px-4 py-2 bg-primary text-white rounded-md hover:bg-opacity-90 transition">
@@ -71,6 +75,7 @@ const Header = () => {
             </button>
           </div>
 
+          {/* MOBILE MENU ICON */}
           <button className="md:hidden">
             <svg
               className="w-6 h-6"
