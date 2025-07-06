@@ -1,9 +1,21 @@
-// src/components/Hero.jsx
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import image from '../assets/WhatsApp Image 2024-09-08 at 01.06.06_421cc77c.jpg'
 
 const Hero = () => {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      setScrolled(scrollY > window.innerHeight * 0.3) // you can fine-tune this
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -27,8 +39,13 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="py-20 md:py-28 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
+    <section
+      id="home"
+      className={`${
+        scrolled ? 'relative' : 'fixed'
+      } top-0 left-0 w-full h-screen z-50 bg-white dark:bg-gray-900 transition-all duration-500`}
+    >
+      <div className="container mx-auto h-full px-6 flex flex-col md:flex-row items-center justify-center">
         <motion.div
           className="md:w-1/2 mb-10 md:mb-0"
           variants={containerVariants}

@@ -1,14 +1,32 @@
 // src/components/Skills.jsx
 import { motion } from 'framer-motion'
-import { FaJs, FaReact, FaNodeJs, FaPython, FaDatabase, FaCss3Alt, FaCuttlefish, FaRProject } from 'react-icons/fa'
-import { SiMysql, SiMongodb, SiOracle } from 'react-icons/si'
+import {
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaDatabase,
+  FaCss3Alt,
+  FaCuttlefish,
+  FaRProject,
+} from 'react-icons/fa'
+import {
+  SiMysql,
+  SiMongodb,
+  SiOracle,
+  SiRedux,
+  SiNextdotjs,
+  SiExpress,
+} from 'react-icons/si'
 
 const Skills = () => {
   const skills = [
     { name: 'JavaScript', level: 90, icon: <FaJs className="text-yellow-400" /> },
     { name: 'React', level: 85, icon: <FaReact className="text-blue-500" /> },
+    { name: 'Redux', level: 82, icon: <SiRedux className="text-purple-500" /> },
+    { name: 'Next.js', level: 78, icon: <SiNextdotjs className="text-black dark:text-white" /> },
     { name: 'Node.js', level: 80, icon: <FaNodeJs className="text-green-500" /> },
-    { name: 'UI/UX Design', level: 75, icon: <FaCss3Alt className="text-pink-400" /> },
+    { name: 'Express.js', level: 79, icon: <SiExpress className="text-gray-600 dark:text-gray-300" /> },
     { name: 'CSS/Tailwind', level: 90, icon: <FaCss3Alt className="text-blue-600" /> },
     { name: 'Python', level: 80, icon: <FaPython className="text-yellow-500" /> },
     { name: 'C/C++', level: 73, icon: <FaCuttlefish className="text-gray-700 dark:text-gray-300" /> },
@@ -16,6 +34,7 @@ const Skills = () => {
     { name: 'MySQL', level: 80, icon: <SiMysql className="text-orange-500" /> },
     { name: 'MongoDB', level: 90, icon: <SiMongodb className="text-green-600" /> },
     { name: 'Oracle', level: 84, icon: <SiOracle className="text-red-500" /> },
+    
   ]
 
   const professionalSkills = ['Communication', 'Teamwork', 'Problem Solving', 'Creativity', 'Time Management', 'Leadership']
