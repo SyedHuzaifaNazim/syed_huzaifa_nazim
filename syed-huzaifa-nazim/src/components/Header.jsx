@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react'
 import ThemeToggle from './ThemeToggle'
 import logo from '../assets/logo.svg' // Add this line
+import resume from '../assets/Syed-Huzaifa-Nazim.pdf' // Add this line
 
 const Header = () => {
   const headerRef = useRef(null)
@@ -43,7 +44,7 @@ const Header = () => {
             <a href="#home" className="flex items-center space-x-2">
             <img src={logo} alt="Logo" className="w-10 h-10" />
             <span className="text-2xl font-bold text-primary">
-              Syed Huzaifa Nazim
+              Portfolio
             </span>
             </a>
           </div>
@@ -71,7 +72,7 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <ThemeToggle />
             <button className="px-4 py-2 bg-primary text-white rounded-md hover:bg-opacity-90 transition">
-              Download Resume
+              <a className='' href={resume}>Download Resume</a>
             </button>
           </div>
 

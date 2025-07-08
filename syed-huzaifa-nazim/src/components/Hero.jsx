@@ -125,7 +125,10 @@ const Hero = () => {
 
       {/* Scroll Down Button */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-        <a href="#about" className="flex flex-col items-center text-blue-600 dark:text-yellow-300 animate-bounce">
+        <a
+          href="#about"
+          className="flex flex-col items-center text-blue-600 dark:text-yellow-300 animate-bounce"
+        >
           <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
