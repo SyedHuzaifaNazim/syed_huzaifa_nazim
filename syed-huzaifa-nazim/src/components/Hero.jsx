@@ -8,8 +8,7 @@ const Hero = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      setScrolled(scrollY > window.innerHeight * 0.3) // you can fine-tune this
+      setScrolled(window.scrollY > window.innerHeight * 0.3)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -32,9 +31,7 @@ const Hero = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
+      transition: { duration: 0.5 },
     },
   }
 
@@ -42,8 +39,8 @@ const Hero = () => {
     <section
       id="home"
       className={`${
-        scrolled ? 'relative' : 'fixed'
-      } top-0 left-0 w-full h-screen z-50 bg-white dark:bg-gray-900 transition-all duration-500`}
+        scrolled ? 'relative h-auto' : 'fixed h-screen'
+      } top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 transition-all duration-500`}
     >
       <div className="container mx-auto h-full px-6 flex flex-col md:flex-row items-center justify-center">
         <motion.div
@@ -124,6 +121,16 @@ const Hero = () => {
             />
           </div>
         </motion.div>
+      </div>
+
+      {/* Scroll Down Button */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+        <a href="#about" className="flex flex-col items-center text-blue-600 dark:text-yellow-300 animate-bounce">
+          <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+          <span className="text-sm">Scroll Down</span>
+        </a>
       </div>
     </section>
   )

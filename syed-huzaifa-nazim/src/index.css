@@ -109,3 +109,6 @@ body {
 .border-primary {
   border-color: var(--color-primary);
 }
+html {
+  scroll-behavior: smooth;
+}
