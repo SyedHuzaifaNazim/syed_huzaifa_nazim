@@ -9,6 +9,7 @@ import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import { motion } from 'framer-motion'
+import Education from './components/Education'
 
 function App() {
   // Add smooth transition for dark mode
@@ -26,6 +27,7 @@ function App() {
       <main className="flex-grow">
         <Hero />
         <About />
+        <Education />
         <Skills />
         <Projects />
         <Experience />

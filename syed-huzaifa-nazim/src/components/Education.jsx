@@ -1,6 +1,7 @@
 // src/components/Education.jsx
 import { motion } from 'framer-motion'
-import { AcademicCapIcon } from '@heroicons/react/solid'
+// import { AcademicCapIcon } from '@heroicons/react/solid'
+import { AcademicCapIcon } from '@heroicons/react/24/solid' 
 
 const education = [
   {
@@ -16,9 +17,9 @@ const education = [
     location: 'Karachi, Pakistan',
   },
   {
-    degree: 'Matriculation (Computer Science)',
-    institute: 'Pak‑Turk Maarif International School',
-    duration: '2019 – 2021',
+    degree: 'Web and Mobile App Development',
+    institute: 'Saylani mass IT Training (SMIT)',
+    duration: '2023 – 2024',
     location: 'Karachi, Pakistan',
   },
 ]
@@ -65,3 +66,4 @@ const Education = () => {
 }
 
 export default Education
+
