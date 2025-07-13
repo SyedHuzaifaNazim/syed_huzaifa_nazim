@@ -11,15 +11,15 @@ const education = [
     location: 'Karachi, Pakistan',
   },
   {
-    degree: 'Intermediate (Pre‑Engineering)',
-    institute: 'Govt. Degree Science College',
-    duration: '2021 – 2023',
-    location: 'Karachi, Pakistan',
-  },
-  {
     degree: 'Web and Mobile App Development',
     institute: 'Saylani mass IT Training (SMIT)',
     duration: '2023 – 2024',
+    location: 'Karachi, Pakistan',
+  },
+  {
+    degree: 'Intermediate (Pre‑Engineering)',
+    institute: 'Govt. Degree Science College',
+    duration: '2021 – 2023',
     location: 'Karachi, Pakistan',
   },
 ]
