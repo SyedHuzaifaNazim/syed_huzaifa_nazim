@@ -7,7 +7,7 @@ const Projects = () => {
       title: 'E-commerce Platform',
       description: 'A full-featured online store with payment integration and admin dashboard.',
       tags: ['React', 'Node.js', 'MongoDB'],
-      image: 'https://via.placeholder.com/600x400',
+      image: 'https://woovina.com/images/2022/03/31/mekog-cover.png',
       codeLink: '',
       projectLink: 'https://ecommerce-platform.example.com'
     },
