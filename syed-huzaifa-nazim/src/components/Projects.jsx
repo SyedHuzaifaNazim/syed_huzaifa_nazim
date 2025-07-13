@@ -109,7 +109,7 @@ const Projects = () => {
           transition={{ delay: 0.5 }}
         >
           <button className="px-6 py-3 border border-blue-600 dark:border-yellow-300 text-blue-600 dark:text-yellow-300 rounded-md hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors duration-300">
-            View All Projects
+            <a href="https://github.com/SyedHuzaifaNazim?tab=repositories">View All Projects</a>
           </button>
         </motion.div>
       </div>
