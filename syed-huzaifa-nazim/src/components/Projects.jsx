@@ -7,19 +7,25 @@ const Projects = () => {
       title: 'E-commerce Platform',
       description: 'A full-featured online store with payment integration and admin dashboard.',
       tags: ['React', 'Node.js', 'MongoDB'],
-      image: 'https://via.placeholder.com/600x400'
+      image: 'https://via.placeholder.com/600x400',
+      codeLink: '',
+      projectLink: 'https://ecommerce-platform.example.com'
     },
     {
       title: 'Task Management App',
       description: 'Productivity application for team collaboration and task tracking.',
       tags: ['React', 'Firebase', 'Tailwind CSS'],
-      image: 'https://embed-ssl.wistia.com/deliveries/4097039cdac9311d5cfa8a8e10502178.jpg?image_crop_resized=900x506'
+      image: 'https://embed-ssl.wistia.com/deliveries/4097039cdac9311d5cfa8a8e10502178.jpg?image_crop_resized=900x506',
+      codeLink: '',
+      projectLink: 'https://task-manager-app.example.com'
     },
     {
       title: 'Portfolio Website',
       description: 'Custom designed and developed portfolio for a creative professional.',
-      tags: ['Next.js', 'Framer Motion', 'SCSS'],
-      image: 'https://cdn1.vectorstock.com/i/1000x1000/78/45/portfolio-banner-with-colorful-confetti-vector-21757845.jpg'
+      tags: ['React.js', 'Framer Motion', 'Tailwind CSS'],
+      image: 'https://cdn1.vectorstock.com/i/1000x1000/78/45/portfolio-banner-with-colorful-confetti-vector-21757845.jpg',
+      codeLink: 'https://github.com/SyedHuzaifaNazim/syed_huzaifa_nazim',
+      projectLink: 'https://syed-huzaifa-nazim.vercel.app/'
     }
   ]
 
@@ -93,8 +99,8 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="mt-4 flex space-x-3">
-                  <a href="#" className="text-blue-600 dark:text-yellow-300 hover:underline">View Project</a>
-                  <a href="#" className="text-blue-600 dark:text-yellow-300 hover:underline">Code</a>
+                  <a href={project.projectLink} className="text-blue-600 dark:text-yellow-300 hover:underline">View Project</a>
+                  <a href={project.codeLink} className="text-blue-600 dark:text-yellow-300 hover:underline">Code</a>
                 </div>
               </div>
             </motion.div>
