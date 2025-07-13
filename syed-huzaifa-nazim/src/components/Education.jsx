@@ -44,7 +44,7 @@ const Education = () => {
           {education.map((item, index) => (
             <motion.div
               key={index}
-              className="p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-center"
+              className="p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-center group..."
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.2 }}
@@ -53,10 +53,10 @@ const Education = () => {
               <div className="flex justify-center mb-4">
                 <AcademicCapIcon className="w-8 h-8 text-blue-600 dark:text-yellow-300" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{item.degree}</h3>
-              <p className="text-gray-700 dark:text-gray-300">{item.institute}</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{item.location}</p>
-              <p className="text-sm italic text-gray-500 dark:text-gray-400 mt-1">{item.duration}</p>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover: stroke-white">{item.degree}</h3>
+              <p className="text-gray-700 dark:text-gray-300 group-hover: text-white">{item.institute}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 group-hover: text-white">{item.location}</p>
+              <p className="text-sm italic text-gray-500 dark:text-gray-400 mt-1 group-hover: text-white">{item.duration}</p>
             </motion.div>
           ))}
         </div>
