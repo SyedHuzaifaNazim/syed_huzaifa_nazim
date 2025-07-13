@@ -72,6 +72,8 @@ const Hero = () => {
                 2000,
                 'Frontend Enthusiast',
                 2000,
+                'Data Analyst',
+                2000,
                 'Backend Engineer',
                 2000,
                 'MERN Stack Developer',
