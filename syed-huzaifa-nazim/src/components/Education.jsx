@@ -5,15 +5,15 @@ import { AcademicCapIcon } from '@heroicons/react/24/solid'
 
 const education = [
   {
-    degree: 'B.S. in Artificial Intelligence',
-    institute: 'Dawood University of Engineering & Technology',
-    duration: '2023 – Present',
-    location: 'Karachi, Pakistan',
-  },
-  {
     degree: 'Web and Mobile App Development',
     institute: 'Saylani mass IT Training (SMIT)',
     duration: '2023 – 2024',
+    location: 'Karachi, Pakistan',
+  },
+  {
+    degree: 'B.S. in Artificial Intelligence',
+    institute: 'Dawood University of Engineering & Technology',
+    duration: '2023 – Present',
     location: 'Karachi, Pakistan',
   },
   {
