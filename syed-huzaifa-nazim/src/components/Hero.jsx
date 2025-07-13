@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import image from '../assets/WhatsApp Image 2024-09-08 at 01.06.06_421cc77c.jpg'
+import About from './About'
 
 const Hero = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -126,7 +127,7 @@ const Hero = () => {
       {/* Scroll Down Button */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
         <a
-          href="#about"
+          href={About ? 'About' : '#home'}
           className="flex flex-col items-center text-blue-600 dark:text-yellow-300 animate-bounce"
         >
           <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
