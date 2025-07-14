@@ -5,7 +5,7 @@ const Projects = () => {
   const projects = [
     {
       title: 'E-commerce Platform',
-      description: 'A full-featured online store with payment integration and admin dashboard.',
+      description: 'A full-featured online store with payment integration and admin dashboard',
       tags: ['React', 'Node.js', 'MongoDB'],
       image: 'https://woovina.com/images/2022/03/31/mekog-cover.png',
       codeLink: '',
@@ -21,7 +21,7 @@ const Projects = () => {
     },
     {
       title: 'Portfolio Website',
-      description: 'Custom designed and developed portfolio for a creative professional.',
+      description: 'Custom designed and developed portfolio for a creative professional',
       tags: ['React.js', 'Framer Motion', 'Tailwind CSS'],
       image: 'https://cdn1.vectorstock.com/i/1000x1000/78/45/portfolio-banner-with-colorful-confetti-vector-21757845.jpg',
       codeLink: 'https://github.com/SyedHuzaifaNazim/syed_huzaifa_nazim',
