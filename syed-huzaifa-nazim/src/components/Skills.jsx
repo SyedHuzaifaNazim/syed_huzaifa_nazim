@@ -45,49 +45,52 @@ const Skills = () => {
   }
 
   return (
-    <section id="skills" className="py-16 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-12 md:py-16 bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
           variants={fadeSlideUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">My Skills</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">My Skills</h2>
           <div className="w-20 h-1 bg-blue-600 dark:bg-yellow-300 mx-auto"></div>
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 gap-8"
+          className="flex flex-col lg:flex-row gap-8 lg:gap-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           {/* Technical Skills */}
-          <motion.div variants={fallFromTop}>
-            <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">Technical Skills</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+          <motion.div 
+            className="w-full lg:w-1/2"
+            variants={fallFromTop}
+          >
+            <h3 className="text-xl md:text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Technical Skills</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {skills.map((skill, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:scale-105 hover:shadow-md transition-all duration-300"
+                  className="flex items-center p-3 sm:p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                   variants={fadeSlideUp}
-                  whileHover={{ y: -5 }}
+                  whileHover={{ y: -3 }}
                 >
-                  <div className="text-2xl mr-4">{skill.icon}</div>
-                  <div className="flex-1">
+                  <div className="text-xl sm:text-2xl mr-3 sm:mr-4 flex-shrink-0">{skill.icon}</div>
+                  <div className="flex-1 min-w-0">
                     <div className="flex justify-between mb-1">
-                      <span className="text-gray-700 dark:text-gray-300">{skill.name}</span>
-                      <span className="text-gray-700 dark:text-gray-300">{skill.level}%</span>
+                      <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 truncate">{skill.name}</span>
+                      <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 ml-2">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
                       <motion.div
                         className="bg-blue-600 dark:bg-yellow-300 h-2 rounded-full"
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
                         viewport={{ once: true }}
                       />
                     </div>
@@ -98,21 +101,25 @@ const Skills = () => {
           </motion.div>
 
           {/* Professional Skills */}
-          <motion.div variants={fallFromTop}>
-            <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">Professional Skills</h3>
-            <div className="grid grid-cols-2 gap-4">
+          <motion.div 
+            className="w-full lg:w-1/2"
+            variants={fallFromTop}
+          >
+            <h3 className="text-xl md:text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Professional Skills</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {professionalSkills.map((skill, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:scale-105 hover:shadow-md transition-all duration-300"
+                  className="flex items-center p-3 sm:p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                   variants={fadeSlideUp}
+                  whileHover={{ y: -3 }}
                 >
-                  <div className="p-2 mr-3 bg-blue-100 dark:bg-yellow-100 dark:bg-opacity-20 rounded-full">
-                    <svg className="w-5 h-5 text-blue-600 dark:text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="p-1.5 sm:p-2 mr-3 bg-blue-100 dark:bg-yellow-100 dark:bg-opacity-20 rounded-full flex-shrink-0">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-gray-700 dark:text-gray-300">{skill}</span>
+                  <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300">{skill}</span>
                 </motion.div>
               ))}
             </div>
