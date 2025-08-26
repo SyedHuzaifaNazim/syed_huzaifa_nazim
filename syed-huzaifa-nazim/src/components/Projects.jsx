@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { ExternalLinkIcon, CodeIcon, EyeIcon } from '@heroicons/react/outline'
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All')
-  const [hoveredProject, setHoveredProject] = useState(null)
 
   const projects = [
     {
@@ -33,33 +31,6 @@ const Projects = () => {
       codeLink: 'https://github.com/SyedHuzaifaNazim/syed_huzaifa_nazim',
       projectLink: 'https://syed-huzaifa-nazim.vercel.app/',
       category: 'Frontend'
-    },
-    {
-      title: 'Weather Dashboard',
-      description: 'Real-time weather application with forecast data, location detection, and interactive charts for weather visualization.',
-      tags: ['React', 'Chart.js', 'API Integration', 'Geolocation'],
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      codeLink: 'https://github.com/SyedHuzaifaNazim/weather-app',
-      projectLink: 'https://weather-app.example.com',
-      category: 'Frontend'
-    },
-    {
-      title: 'Chat Application',
-      description: 'Real-time messaging platform with rooms, user authentication, and file sharing capabilities.',
-      tags: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
-      image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      codeLink: 'https://github.com/SyedHuzaifaNazim/chat-app',
-      projectLink: 'https://chat-app.example.com',
-      category: 'Full Stack'
-    },
-    {
-      title: 'Fitness Tracker',
-      description: 'Comprehensive fitness application with workout planning, progress tracking, and social features.',
-      tags: ['React Native', 'Firebase', 'Redux', 'Charts'],
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      codeLink: 'https://github.com/SyedHuzaifaNazim/fitness-tracker',
-      projectLink: 'https://fitness-tracker.example.com',
-      category: 'Mobile'
     }
   ]
 
@@ -80,7 +51,7 @@ const Projects = () => {
   }
 
   const item = {
-    hidden: { y: 50, opacity: 0 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
@@ -89,6 +60,26 @@ const Projects = () => {
       }
     }
   }
+
+  // Simple icon components to avoid @heroicons dependency issues
+  const EyeIcon = () => (
+    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+    </svg>
+  )
+
+  const CodeIcon = () => (
+    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+    </svg>
+  )
+
+  const ExternalLinkIcon = () => (
+    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+    </svg>
+  )
 
   return (
     <section id="projects" className="py-16 bg-gray-50 dark:bg-gray-800">
@@ -139,22 +130,15 @@ const Projects = () => {
             <motion.div 
               key={index}
               variants={item}
-              whileHover={{ y: -8 }}
-              onHoverStart={() => setHoveredProject(index)}
-              onHoverEnd={() => setHoveredProject(null)}
-              className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group"
+              whileHover={{ y: -5 }}
+              className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
             >
-              <div className="h-52 overflow-hidden relative">
+              <div className="h-48 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-white text-sm">{project.description}</p>
-                  </div>
-                </div>
                 <div className="absolute top-4 right-4">
                   <span className="px-3 py-1 bg-blue-600 dark:bg-yellow-300 text-white dark:text-gray-900 text-xs font-medium rounded-full">
                     {project.category}
@@ -162,9 +146,12 @@ const Projects = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-yellow-300 transition-colors duration-300">
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
                   {project.title}
                 </h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, i) => (
                     <span 
@@ -175,14 +162,14 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-3 pt-2 border-t border-gray-100 dark:border-gray-800">
+                <div className="flex space-x-3 pt-3 border-t border-gray-100 dark:border-gray-800">
                   <a 
                     href={project.projectLink} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center text-blue-600 dark:text-yellow-300 hover:text-blue-800 dark:hover:text-yellow-100 transition-colors duration-300"
+                    className="flex items-center text-blue-600 dark:text-yellow-300 hover:text-blue-800 dark:hover:text-yellow-100 transition-colors duration-300 text-sm"
                   >
-                    <EyeIcon className="w-4 h-4 mr-1" />
+                    <EyeIcon />
                     Live Demo
                   </a>
                   {project.codeLink && (
@@ -190,9 +177,9 @@ const Projects = () => {
                       href={project.codeLink} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-300"
+                      className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-300 text-sm"
                     >
-                      <CodeIcon className="w-4 h-4 mr-1" />
+                      <CodeIcon />
                       Code
                     </a>
                   )}
@@ -216,7 +203,7 @@ const Projects = () => {
             className="inline-flex items-center px-6 py-3 border-2 border-blue-600 dark:border-yellow-300 text-blue-600 dark:text-yellow-300 rounded-md hover:bg-blue-600 dark:hover:bg-yellow-300 hover:text-white dark:hover:text-gray-900 transition-all duration-300 font-medium"
           >
             View All Projects
-            <ExternalLinkIcon className="w-4 h-4 ml-2" />
+            <ExternalLinkIcon />
           </a>
         </motion.div>
       </div>
