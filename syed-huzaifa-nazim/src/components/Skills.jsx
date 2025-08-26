@@ -1,26 +1,20 @@
 import { motion } from 'framer-motion'
-import {
-  FaJs, FaReact, FaNodeJs, FaPython, FaCss3Alt, FaCuttlefish, FaRProject,
-} from 'react-icons/fa'
-import {
-  SiMysql, SiMongodb, SiOracle, SiRedux, SiNextdotjs, SiExpress,
-} from 'react-icons/si'
 
 const Skills = () => {
   const skills = [
-    { name: 'JavaScript', level: 90, icon: <FaJs className="text-yellow-400" /> },
-    { name: 'React', level: 85, icon: <FaReact className="text-blue-500" /> },
-    { name: 'Redux', level: 82, icon: <SiRedux className="text-purple-500" /> },
-    { name: 'Next.js', level: 78, icon: <SiNextdotjs className="text-black dark:text-white" /> },
-    { name: 'Node.js', level: 80, icon: <FaNodeJs className="text-green-500" /> },
-    { name: 'Express.js', level: 79, icon: <SiExpress className="text-gray-600 dark:text-gray-300" /> },
-    { name: 'CSS/Tailwind', level: 90, icon: <FaCss3Alt className="text-blue-600" /> },
-    { name: 'Python', level: 80, icon: <FaPython className="text-yellow-500" /> },
-    { name: 'C/C++', level: 73, icon: <FaCuttlefish className="text-gray-700 dark:text-gray-300" /> },
-    { name: 'R', level: 70, icon: <FaRProject className="text-blue-400" /> },
-    { name: 'MySQL', level: 80, icon: <SiMysql className="text-orange-500" /> },
-    { name: 'MongoDB', level: 90, icon: <SiMongodb className="text-green-600" /> },
-    { name: 'Oracle', level: 84, icon: <SiOracle className="text-red-500" /> },
+    { name: 'JavaScript', level: 90, icon: 'JS' },
+    { name: 'React', level: 85, icon: 'React' },
+    { name: 'Redux', level: 82, icon: 'Redux' },
+    { name: 'Next.js', level: 78, icon: 'Next' },
+    { name: 'Node.js', level: 80, icon: 'Node' },
+    { name: 'Express.js', level: 79, icon: 'Express' },
+    { name: 'CSS/Tailwind', level: 90, icon: 'CSS' },
+    { name: 'Python', level: 80, icon: 'Python' },
+    { name: 'C/C++', level: 73, icon: 'C++' },
+    { name: 'R', level: 70, icon: 'R' },
+    { name: 'MySQL', level: 80, icon: 'SQL' },
+    { name: 'MongoDB', level: 90, icon: 'Mongo' },
+    { name: 'Oracle', level: 84, icon: 'Oracle' },
   ]
 
   const professionalSkills = [
@@ -42,6 +36,26 @@ const Skills = () => {
   const fallFromTop = {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, type: 'spring', bounce: 0.3 } },
+  }
+
+  // Function to get icon background color based on technology
+  const getIconColor = (name) => {
+    const colorMap = {
+      'JavaScript': 'bg-yellow-400 text-yellow-900',
+      'React': 'bg-blue-500 text-white',
+      'Redux': 'bg-purple-500 text-white',
+      'Next.js': 'bg-black text-white dark:bg-white dark:text-black',
+      'Node.js': 'bg-green-500 text-white',
+      'Express.js': 'bg-gray-600 text-white dark:bg-gray-300 dark:text-gray-800',
+      'CSS/Tailwind': 'bg-blue-600 text-white',
+      'Python': 'bg-yellow-500 text-yellow-900',
+      'C/C++': 'bg-gray-700 text-white dark:bg-gray-300 dark:text-gray-800',
+      'R': 'bg-blue-400 text-white',
+      'MySQL': 'bg-orange-500 text-white',
+      'MongoDB': 'bg-green-600 text-white',
+      'Oracle': 'bg-red-500 text-white',
+    }
+    return colorMap[name] || 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-white'
   }
 
   return (
@@ -79,7 +93,9 @@ const Skills = () => {
                   variants={fadeSlideUp}
                   whileHover={{ y: -3 }}
                 >
-                  <div className="text-xl sm:text-2xl mr-3 sm:mr-4 flex-shrink-0">{skill.icon}</div>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold mr-3 sm:mr-4 flex-shrink-0 ${getIconColor(skill.name)}`}>
+                    {skill.icon}
+                  </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex justify-between mb-1">
                       <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 truncate">{skill.name}</span>
