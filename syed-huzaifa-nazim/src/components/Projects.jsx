@@ -1,22 +1,23 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import brandsocia from '../assets/brandsocia.png'
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All')
 
   const projects = [
     {
-      title: 'E-commerce Platform',
-      description: 'A full-featured online store with payment integration, product management, and admin dashboard built with modern web technologies.',
+      title: 'Brand Socia',
+      description: 'A platform for brands to connect with influencers and for influencers to find brands to collaborate with.',
       tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      codeLink: '',
+      image: brandsocia,
+      codeLink: 'https://github.com/SyedHuzaifaNazim/BrandSocia',
       projectLink: 'https://brandsocia.vercel.app/',
       category: 'Full Stack'
     },
     {
       title: 'Stream Wave',
-      description: 'Productivity application for team collaboration and task tracking with real-time updates and drag-and-drop functionality.',
+      description: 'A platform for streaming movies and TV shows with a search functionality and a watch history.',
       tags: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
       image: 'https://cdn.dribbble.com/userupload/9422488/file/original-5e50a254a590ecbb87859477600b0497.png?resize=400x0',
       codeLink: 'https://github.com/SyedHuzaifaNazim/Stream-Wave',
