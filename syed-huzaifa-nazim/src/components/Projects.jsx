@@ -15,13 +15,13 @@ const Projects = () => {
       category: 'Full Stack'
     },
     {
-      title: 'Task Management App',
+      title: 'Stream Wave',
       description: 'Productivity application for team collaboration and task tracking with real-time updates and drag-and-drop functionality.',
-      tags: ['React', 'Firebase', 'Tailwind CSS', 'Redux'],
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      codeLink: '',
-      projectLink: 'https://.vercel.app/',
-      category: 'Frontend'
+      tags: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
+      image: 'https://cdn.dribbble.com/userupload/9422488/file/original-5e50a254a590ecbb87859477600b0497.png?resize=400x0',
+      codeLink: 'https://github.com/SyedHuzaifaNazim/Stream-Wave',
+      projectLink: 'https://stream-wave.vercel.app/',
+      category: 'Full Stack'
     },
     {
       title: 'Portfolio Website',
