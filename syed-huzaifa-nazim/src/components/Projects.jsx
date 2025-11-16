@@ -11,7 +11,7 @@ const Projects = () => {
       tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       codeLink: '',
-      projectLink: 'https://ecommerce-platform.example.com',
+      projectLink: 'https://brandsocia.vercel.app/',
       category: 'Full Stack'
     },
     {
@@ -20,7 +20,7 @@ const Projects = () => {
       tags: ['React', 'Firebase', 'Tailwind CSS', 'Redux'],
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       codeLink: '',
-      projectLink: 'https://task-manager-app.example.com',
+      projectLink: 'https://.vercel.app/',
       category: 'Frontend'
     },
     {
