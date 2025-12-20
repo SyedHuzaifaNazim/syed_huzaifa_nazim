@@ -4,33 +4,33 @@ import { createContext, useContext, useEffect, useState } from 'react';
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light');
+  // 1. Initialize state based on LocalStorage OR System Preference
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        return savedTheme;
+      }
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+    }
+    return 'light';
+  });
 
+  // 2. Sync with DOM and LocalStorage whenever theme changes
   useEffect(() => {
-    // Get saved theme or system preference
-    const savedTheme = localStorage.getItem('theme') || 
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const root = window.document.documentElement;
     
-    setTheme(savedTheme);
-    document.documentElement.classList.add(savedTheme);
+    // Remove both to prevent conflicts, then add the current one
+    root.classList.remove('light', 'dark');
+    root.classList.add(theme);
     
-    // Watch for system preference changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e) => {
-      const newTheme = e.matches ? 'dark' : 'light';
-      setTheme(newTheme);
-      document.documentElement.classList.replace(theme, newTheme);
-    };
-    mediaQuery.addEventListener('change', handleChange);
-    
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.replace(theme, newTheme);
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
   return (
