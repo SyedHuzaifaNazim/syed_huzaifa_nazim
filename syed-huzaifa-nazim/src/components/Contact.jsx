@@ -13,7 +13,7 @@ const Contact = () => {
 
     // RESTORED YOUR EXACT CREDENTIALS
     emailjs
-      .sendForm('service_xqjn4nm', 'template_alhau15', form.current, 'TwRHoYR8j3DLYPmNy')
+      .sendForm('service_xqjn4nm', 'template_alhau15', form.current, 'mVllVNlJundbYGJcd')
       .then(() => {
         setStatus('success')
         form.current.reset()
