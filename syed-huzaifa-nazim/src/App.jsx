@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import Snowfall from 'react-snowfall'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -39,6 +40,21 @@ function App() {
       
       {/* --- Background Layer --- */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        
+        {/* Snowfall Effect */}
+        <Snowfall 
+          snowflakeCount={100}
+          style={{
+            position: 'fixed',
+            width: '100vw',
+            height: '100vh',
+            zIndex: 1 // Sits just above the grid/blobs but behind content
+          }}
+          radius={[0.5, 2.5]} // Variation in snowflake size
+          speed={[0.5, 2.0]} // Gentle falling speed
+          wind={[-0.5, 1.0]} // Slight wind effect
+        />
+
         {/* Tech Grid */}
         <div className="absolute inset-0 bg-grid-white opacity-[0.05]" />
         
