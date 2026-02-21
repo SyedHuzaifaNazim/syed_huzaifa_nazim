@@ -6,19 +6,19 @@ const projects = [
   {
     title: 'Brand Socia',
     description: 'A platform for brands to connect with influencers and for influencers to find brands to collaborate with.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    tags: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
     image: brandsocia,
     codeLink: 'https://github.com/SyedHuzaifaNazim/BrandSocia',
-    projectLink: 'https://brandsocia.vercel.app/',
+    projectLink: 'https://brandsocia.com/',
     category: 'Full Stack'
   },
   {
-    title: 'Stream Wave',
-    description: 'A platform for streaming movies and TV shows with a search functionality and a watch history.',
-    tags: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
+    title: 'Tax Filerz & Co.',
+    description: 'A comprehensive tax filing and financial management platform for individuals and businesses, offering seamless tax preparation, filing, and financial insights.',
+    tags: ['wordpress', 'php', 'MySQL', 'Tailwind CSS', 'Redux'],
     image: 'https://cdn.dribbble.com/userupload/9422488/file/original-5e50a254a590ecbb87859477600b0497.png?resize=400x0',
-    codeLink: 'https://github.com/SyedHuzaifaNazim/Stream-Wave',
-    projectLink: 'https://stream-wave.vercel.app/',
+    codeLink: 'https://github.com/SyedHuzaifaNazim/',
+    projectLink: 'https://taxfilerz.com/',
     category: 'Full Stack'
   },
   {
