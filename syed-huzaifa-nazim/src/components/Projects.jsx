@@ -29,6 +29,15 @@ const projects = [
     codeLink: 'https://github.com/SyedHuzaifaNazim/syed_huzaifa_nazim',
     projectLink: 'https://syed-huzaifa-nazim.vercel.app/',
     category: 'Frontend'
+  },
+  {
+    title: 'Apna Ghar Apni Zameen',
+    description: 'A real estate platform for buying and selling properties with advanced search and filtering capabilities.',
+    tags: ['React.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
+    image: 'https://images.unsplash.com/photo-1560448204-e02f28e9c7d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    codeLink: 'https://github.com/SyedHuzaifaNazim/Apna-Ghar-Apni-Zameen',
+    projectLink: 'https://apnagharapnizameen.com/',
+    category: 'Full Stack'
   }
 ]
 
