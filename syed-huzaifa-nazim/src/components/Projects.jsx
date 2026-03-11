@@ -25,7 +25,7 @@ const projects = [
     title: 'Portfolio Website',
     description: 'Custom designed and developed portfolio website with smooth animations and responsive design showcasing my work and skills.',
     tags: ['React.js', 'Framer Motion', 'Tailwind CSS', 'Vite'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://media.licdn.com/dms/image/v2/D4D2DAQHm1I49BP6qiw/profile-treasury-image-shrink_800_800/B4DZtltVsqI8AY-/0/1766937943666?e=1773824400&v=beta&t=3Y93OtejQNMRUavvmHPKp9S0v-u7a8fCaVQRrneIOuc',
     codeLink: 'https://github.com/SyedHuzaifaNazim/syed_huzaifa_nazim',
     projectLink: 'https://syed-huzaifa-nazim.vercel.app/',
     category: 'Frontend'
