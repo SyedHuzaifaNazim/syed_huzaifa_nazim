@@ -33,8 +33,8 @@ const projects = [
   {
     title: 'Apna Ghar Apni Zameen',
     description: 'A real estate platform for buying and selling properties with advanced search and filtering capabilities.',
-    tags: ['React.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
-    image: 'https://images.unsplash.com/photo-1560448204-e02f28e9c7d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    tags: ['Wordpress','React.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
+    image: 'https://img.freepik.com/free-psd/real-estate-house-property-web-banner-background-template_120329-4478.jpg?t=st=1773215185~exp=1773218785~hmac=846de2b708ce888e60ab15206c1f707a7578b5f823b95aa23c6469a6ae4dcdd5&w=1480',
     codeLink: 'https://github.com/SyedHuzaifaNazim/Apna-Ghar-Apni-Zameen',
     projectLink: 'https://apnagharapnizameen.com/',
     category: 'Full Stack'
