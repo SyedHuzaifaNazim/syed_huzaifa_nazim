@@ -27,7 +27,7 @@ const Contact = () => {
     <section id="contact" className="py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
-          <h2 className="text-4xl font-bold mb-6">Get In Touch</h2>
+          <h2 className="text-7xl italic font-bold mb-6">Get In Touch!</h2>
           <p className="text-gray-400 mb-8 text-lg">
             Have a project in mind or want to discuss opportunities? I'd love to hear from you.
           </p>

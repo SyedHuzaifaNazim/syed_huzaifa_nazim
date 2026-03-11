@@ -38,7 +38,7 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20">
       <div className="mb-10">
-        <h2 className="text-3xl font-bold mb-4">Skills & Technologies</h2>
+        <h2 className="text-7xl italic font-bold mb-4">Skills & Technologies</h2>
         
         {/* Tabs */}
         <div className="flex flex-wrap gap-2">

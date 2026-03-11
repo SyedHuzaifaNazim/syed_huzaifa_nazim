@@ -71,6 +71,14 @@ const Hero = () => {
             >
               View Work
             </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.open('syed-huzaifa-nazim\\src\\assets\\Syed-Huzaifa-Nazim.pdf', '_blank')}
+              className="px-8 py-4 bg-white/5 border border-white/10 text-white font-medium rounded-full hover:bg-white/10 transition-colors backdrop-blur-sm"
+            >
+              View Resume
+            </motion.button>
           </div>
         </motion.div>
 

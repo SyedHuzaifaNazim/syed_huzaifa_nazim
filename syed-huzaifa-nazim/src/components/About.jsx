@@ -22,7 +22,7 @@ const About = () => {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <HiSparkles className="text-indigo-400 w-6 h-6" />
-                <h2 className="text-2xl font-bold">About Me</h2>
+                <h2 className="text-2xl italic font-bold">About Me</h2>
               </div>
               <p className="text-gray-300 leading-relaxed mb-4">
                 I'm a passionate <span className="text-indigo-400 font-semibold">Web Developer</span> currently pursuing a Bachelor's degree in <span className="text-indigo-400 font-semibold">Artificial Intelligence</span> from DUET. With hands-on experience in technologies like React.js, Next.js, Node.js, and MongoDB, I enjoy building full-stack applications that solve real-world problems.

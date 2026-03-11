@@ -27,7 +27,7 @@ const education = [
 const Education = () => {
   return (
     <section id="education" className="py-10">
-      <h2 className="text-3xl font-bold mb-12">Education</h2>
+      <h2 className="text-7xl italic font-bold mb-12">Education</h2>
       <div className="grid gap-6">
         {education.map((item, idx) => (
           <motion.div
