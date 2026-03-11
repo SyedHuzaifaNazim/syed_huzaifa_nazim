@@ -16,7 +16,7 @@ const projects = [
     title: 'Tax Filerz & Co.',
     description: 'A comprehensive tax filing and financial management platform for individuals and businesses, offering seamless tax preparation, filing, and financial insights.',
     tags: ['wordpress', 'php', 'MySQL', 'Tailwind CSS', 'Redux'],
-    image: 'https://cdn.dribbble.com/userupload/9422488/file/original-5e50a254a590ecbb87859477600b0497.png?resize=400x0',
+    image: 'https://img.freepik.com/premium-photo/tax-benefits-concept-finance-business-blue-b_94120-1783.jpg?w=1480',
     codeLink: 'https://github.com/SyedHuzaifaNazim/',
     projectLink: 'https://taxfilerz.com/',
     category: 'Full Stack'
@@ -37,6 +37,24 @@ const projects = [
     image: 'https://img.freepik.com/free-psd/real-estate-house-property-web-banner-background-template_120329-4478.jpg?t=st=1773215185~exp=1773218785~hmac=846de2b708ce888e60ab15206c1f707a7578b5f823b95aa23c6469a6ae4dcdd5&w=1480',
     codeLink: 'https://github.com/SyedHuzaifaNazim/Apna-Ghar-Apni-Zameen',
     projectLink: 'https://apnagharapnizameen.com/',
+    category: 'Full Stack'
+  },
+  {
+    title: 'Cosmic Code 404 Solutions',
+    description: 'A software house specializing in innovative solutions for the digital age, offering a wide range of services including web development, mobile app development, and custom software solutions.',
+    tags: ['React.js', 'node.js', 'TypeScript', 'Tailwind CSS'],
+    image: 'https://img.freepik.com/free-photo/technology-circuit-processor-innovation-network-concept_53876-124249.jpg?t=st=1773216143~exp=1773219743~hmac=ec1b5ef1e7fda182ced4e29ab5bda567698181859fe4b6beebd272de6d900614&w=1480',
+    codeLink: 'https://github.com/SyedHuzaifaNazim/COSMOS-CODE-404/tree/main/cosmic-code-404-solutions',
+    projectLink: 'https://CC4-coming-soon.netlify.app/',
+    category: 'Frontend'
+  },
+  {
+    title: 'SaaS Dashboard',
+    description: 'A sleek and modern dashboard for managing SaaS applications, featuring real-time analytics and user management.',
+    tags: ['React.js', 'Framer Motion', 'Tailwind CSS', 'Vite','Docker','Kubernetes','node.js','Express.js','PostgreSQL','n8n'],
+    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    codeLink: 'https://github.com/SyedHuzaifaNazim/saas-automated-engine',
+    projectLink: 'https://saas-dashboard-automated.netlify.app/',
     category: 'Full Stack'
   }
 ]
