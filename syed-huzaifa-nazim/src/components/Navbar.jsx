@@ -7,6 +7,7 @@ const navItems = [
   { id: 'experience', icon: HiAcademicCap, label: 'Exp' }, // Using Cap for Exp/Edu combo
   { id: 'projects', icon: HiCode, label: 'Work' },
   { id: 'contact', icon: HiMail, label: 'Contact' },
+  { id: 'resume', icon: HiAcademicCap, label: 'Resume' }, // Reusing Cap for Resume
 ]
 
 const Navbar = () => {

@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import { HiArrowDown, HiCode } from 'react-icons/hi'
-// Make sure this path matches your file structure exactly
-// import image from '../assets/WhatsApp Image 2024-09-08 at 01.06.06_421cc77c.jpg'
 import image from '../assets/328.jpg'
 
 const Hero = () => {
