@@ -1,3 +1,4 @@
+"use client";
 import { motion } from 'framer-motion'
 import { HiHome, HiUser, HiCode, HiMail, HiAcademicCap } from 'react-icons/hi'
 
