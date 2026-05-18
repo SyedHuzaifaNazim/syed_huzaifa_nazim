@@ -39,6 +39,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+    <meta name="google-site-verification" content="Cn6PIfbD-Bu0iHz614g5L8fN7ugvKEy-sT8jp9Vw7TU" />
       <body className="bg-white dark:bg-slate-900 transition-colors duration-300">
         <ThemeContextProvider>
           <Navbar />
