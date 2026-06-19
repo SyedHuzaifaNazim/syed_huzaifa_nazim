@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 
-const resumeFile = "/Syed-Huzaifa-Nazim.pdf";
+const resumeFile = "/Syed-Huzaifa-Resume.pdf";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.mjs',
