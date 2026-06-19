@@ -30,6 +30,39 @@ const projects = [
     featured: true,
   },
   {
+    title: 'TutorWala',
+    description: 'A premium full-stack tutor matching platform featuring role-based authentication, interactive forms for students & faculty, profile picture uploads, and a feature-rich admin dashboard with secure profile controls.',
+    tags: ['React.js', 'Express.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Framer Motion', 'Multer', 'JWT Auth', 'Bcrypt', 'shadcn/ui'],
+    image: '/assets/tutor.png',
+    codeLink: 'https://github.com/SyedHuzaifaNazim/Tutor-Wala',
+    projectLink: 'https://tutorwala.vercel.app/',
+    category: 'Full Stack',
+    color: '#27bafb',
+    featured: true,
+  },
+  {
+    title: 'Driver Assistance Pipeline',
+    description: 'An advanced AI computer vision pipeline integrating YOLOv8 nano for real-time vehicle tracking, classical Canny/Hough transform lane detection, velocity estimation, and dynamic collision proximity warning HUD overlays.',
+    tags: ['Python', 'YOLOv8', 'OpenCV', 'NumPy', 'SciPy', 'PyTorch', 'Computer Vision'],
+    image: '/assets/driver_assistance.png',
+    codeLink: 'https://github.com/SyedHuzaifaNazim/CCA-CV',
+    projectLink: 'https://github.com/SyedHuzaifaNazim/CCA-CV',
+    category: 'AI / ML',
+    color: '#10b981',
+    featured: true,
+  },
+  {
+    title: 'StreamWave',
+    description: 'A modern, high-performance video streaming platform built with Next.js 14, featuring YouTube API integration, secure Google OAuth login, smart search, and a stunning glassmorphic interface with Framer Motion.',
+    tags: ['Next.js', 'React.js', 'Tailwind CSS', 'Framer Motion', 'NextAuth.js', 'YouTube API'],
+    image: '/assets/streamwave.png',
+    codeLink: 'https://github.com/SyedHuzaifaNazim/Stream-Wave',
+    projectLink: 'https://github.com/SyedHuzaifaNazim/Stream-Wave',
+    category: 'Full Stack',
+    color: '#0284c7',
+    featured: true,
+  },
+  {
     title: 'Portfolio Website',
     description: 'Custom designed portfolio with smooth animations and responsive design showcasing my work.',
     tags: ['React.js', 'Framer Motion', 'Tailwind CSS', 'Vite'],
@@ -38,6 +71,17 @@ const projects = [
     projectLink: 'https://syed-huzaifa-nazim.vercel.app/',
     category: 'Frontend',
     color: '#f472b6',
+    featured: false,
+  },
+  {
+    title: 'Helmet Detection System',
+    description: 'A real-time deep learning computer vision system custom-trained on YOLOv8 to automate traffic compliance by detecting motorcycle riders, safety helmet presence (compliance vs. violations), and license plates.',
+    tags: ['Python', 'YOLOv8', 'OpenCV', 'PyTorch', 'Computer Vision', 'Deep Learning'],
+    image: '/assets/helmet_detection.png',
+    codeLink: 'https://github.com/SyedHuzaifaNazim/CCA-by-53-23-and-07',
+    projectLink: 'https://github.com/SyedHuzaifaNazim/CCA-by-53-23-and-07',
+    category: 'AI / ML',
+    color: '#ef4444',
     featured: false,
   },
   {
@@ -79,8 +123,8 @@ const projects = [
 const useTilt = () => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const rotateX = useSpring(useTransform(y, [-80, 80], [8, -8]), { stiffness: 200, damping: 25 });
-  const rotateY = useSpring(useTransform(x, [-80, 80], [-8, 8]), { stiffness: 200, damping: 25 });
+  const rotateX = useSpring(useTransform(y, [-80, 80], [6, -6]), { stiffness: 200, damping: 25 });
+  const rotateY = useSpring(useTransform(x, [-80, 80], [-6, 6]), { stiffness: 200, damping: 25 });
   const glowX = useTransform(x, [-80, 80], [0, 100]);
   const glowY = useTransform(y, [-80, 80], [0, 100]);
   const onMouseMove = (e) => {
@@ -99,10 +143,10 @@ const FeaturedCard = ({ project, idx }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 25 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
       style={{ perspective: 1200 }}
       onMouseMove={tilt.onMouseMove}
       onMouseLeave={tilt.onMouseLeave}
@@ -112,150 +156,122 @@ const FeaturedCard = ({ project, idx }) => {
           rotateX: tilt.rotateX,
           rotateY: tilt.rotateY,
           transformStyle: 'preserve-3d',
-          position: 'relative',
-          borderRadius: '24px',
-          overflow: 'hidden',
-          border: `1px solid ${hovered ? project.color + '40' : 'rgba(255,255,255,0.06)'}`,
-          boxShadow: hovered
-            ? `0 24px 64px rgba(0,0,0,0.5), 0 0 0 1px ${project.color}20, 0 0 60px ${project.color}15`
-            : '0 8px 32px rgba(0,0,0,0.3)',
-          transition: 'box-shadow 0.4s ease, border-color 0.4s ease',
-          background: '#0a0f1e',
         }}
+        className="glass-panel cyber-border rounded-2xl overflow-hidden h-full flex flex-col justify-between"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        {/* Image */}
-        <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
-          <motion.div
-            animate={{ scale: hovered ? 1.06 : 1 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            style={{ width: '100%', height: '100%' }}
-          >
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              style={{ objectFit: 'cover' }}
+        <div>
+          {/* Image container */}
+          <div className="relative h-56 overflow-hidden bg-slate-950/20">
+            <motion.div
+              animate={{ scale: hovered ? 1.05 : 1 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="w-full h-full relative"
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ objectFit: 'cover' }}
+                className="opacity-90 dark:opacity-75"
+              />
+            </motion.div>
+
+            {/* Gradient overlays */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
+
+            {/* Glowing spot */}
+            <motion.div
+              style={{
+                position: 'absolute', inset: 0,
+                background: useTransform(
+                  [tilt.glowX, tilt.glowY],
+                  ([gx, gy]) => `radial-gradient(circle at ${gx}% ${gy}%, ${project.color}18, transparent 65%)`
+                ),
+                pointerEvents: 'none',
+              }}
             />
-          </motion.div>
 
-          {/* Image overlay */}
-          <div style={{
-            position: 'absolute', inset: 0,
-            background: `linear-gradient(180deg, transparent 30%, #0a0f1e 100%)`,
-          }} />
+            {/* Category badge */}
+            <div 
+              className="absolute top-4 left-4 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border backdrop-blur-md"
+              style={{
+                background: `${project.color}15`,
+                borderColor: `${project.color}35`,
+                color: project.color,
+              }}
+            >
+              {project.category}
+            </div>
 
-          {/* Moving glow on hover */}
-          <motion.div
-            style={{
-              position: 'absolute', inset: 0,
-              background: useTransform(
-                [tilt.glowX, tilt.glowY],
-                ([gx, gy]) => `radial-gradient(circle at ${gx}% ${gy}%, ${project.color}20, transparent 60%)`
-              ),
-              pointerEvents: 'none',
-            }}
-          />
-
-          {/* Category badge */}
-          <div style={{
-            position: 'absolute', top: '16px', left: '16px',
-            padding: '4px 12px', borderRadius: '999px',
-            background: `${project.color}20`,
-            border: `1px solid ${project.color}40`,
-            fontSize: '11px', fontWeight: 600,
-            color: project.color, letterSpacing: '0.06em',
-            backdropFilter: 'blur(8px)',
-          }}>
-            {project.category}
+            {/* Featured badge */}
+            <div className="absolute top-4 right-4 px-3 py-1 rounded-lg text-[9px] font-bold uppercase tracking-wider border border-white/10 dark:border-white/5 bg-slate-900/60 dark:bg-black/60 text-slate-400 backdrop-blur-md">
+              Featured
+            </div>
           </div>
 
-          {/* Featured badge */}
-          <div style={{
-            position: 'absolute', top: '16px', right: '16px',
-            padding: '4px 10px', borderRadius: '999px',
-            background: 'rgba(0,0,0,0.6)',
-            border: '1px solid rgba(255,255,255,0.1)',
-            fontSize: '10px', fontWeight: 600,
-            color: '#64748b', letterSpacing: '0.08em',
-            backdropFilter: 'blur(8px)',
-          }}>
-            FEATURED
+          {/* Card body */}
+          <div className="p-6 space-y-4">
+            {/* Title with color highlight */}
+            <div className="flex items-center gap-3">
+              <div className="w-1.5 h-6 rounded-full flex-shrink-0" style={{ background: project.color }} />
+              <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">{project.title}</h3>
+            </div>
+
+            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              {project.description}
+            </p>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-1.5">
+              {project.tags.map((tag) => (
+                <span 
+                  key={tag} 
+                  className="text-[10px] font-semibold px-2.5 py-1 rounded-lg border text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors"
+                  style={{
+                    background: `${project.color}05`,
+                    borderColor: `${project.color}15`,
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Content */}
-        <div style={{ padding: '24px' }}>
-          {/* Title with accent line */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-            <div style={{ width: '3px', height: '20px', borderRadius: '2px', background: project.color, flexShrink: 0 }} />
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#f1f5f9' }}>{project.title}</h3>
-          </div>
-
-          <p style={{ color: '#64748b', fontSize: '13.5px', lineHeight: 1.7, marginBottom: '18px' }}>
-            {project.description}
-          </p>
-
-          {/* Tags */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '20px' }}>
-            {project.tags.map((tag) => (
-              <span key={tag} style={{
-                fontSize: '11px', fontWeight: 500,
-                padding: '3px 10px', borderRadius: '999px',
-                background: `${project.color}08`,
-                border: `1px solid ${project.color}20`,
-                color: '#64748b',
-              }}>
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          {/* Links */}
-          <div style={{
-            display: 'flex', gap: '12px',
-            paddingTop: '16px',
-            borderTop: '1px solid rgba(255,255,255,0.05)',
-          }}>
+        {/* Action links */}
+        <div className="p-6 pt-0">
+          <div className="h-[1px] bg-slate-200 dark:bg-white/5 mb-4" />
+          <div className="flex gap-3">
             <motion.a
               href={project.projectLink}
               target="_blank"
               rel="noreferrer"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
+              whileHover={{ scale: 1.02, y: -1 }}
+              whileTap={{ scale: 0.98 }}
+              className="flex-1 py-2.5 rounded-xl text-white font-bold text-xs flex items-center justify-center gap-2 border-none shadow-md"
               style={{
-                flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
-                padding: '9px 0',
-                borderRadius: '10px',
-                background: `linear-gradient(135deg, ${project.color}cc, ${project.color}99)`,
-                color: '#fff', fontSize: '13px', fontWeight: 600,
-                textDecoration: 'none',
-                boxShadow: `0 4px 16px ${project.color}30`,
+                background: `linear-gradient(135deg, ${project.color}, ${project.color}dd)`,
+                boxShadow: `0 4px 15px ${project.color}25`,
               }}
             >
-              <HiExternalLink style={{ fontSize: '15px' }} />
+              <HiExternalLink className="w-4 h-4" />
               Live Demo
             </motion.a>
+            
             <motion.a
               href={project.codeLink}
               target="_blank"
               rel="noreferrer"
-              whileHover={{ scale: 1.04, background: 'rgba(255,255,255,0.08)' }}
-              whileTap={{ scale: 0.96 }}
-              style={{
-                flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
-                padding: '9px 0',
-                borderRadius: '10px',
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
-                color: '#94a3b8', fontSize: '13px', fontWeight: 500,
-                textDecoration: 'none',
-              }}
+              whileHover={{ scale: 1.02, y: -1 }}
+              whileTap={{ scale: 0.98 }}
+              className="flex-1 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 font-semibold text-xs flex items-center justify-center gap-2 bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 transition-all"
             >
-              <HiCode style={{ fontSize: '15px' }} />
-              Source
+              <HiCode className="w-4 h-4" />
+              Source Code
             </motion.a>
           </div>
         </div>
@@ -271,10 +287,10 @@ const CompactCard = ({ project, idx }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
       style={{ perspective: 1000 }}
       onMouseMove={tilt.onMouseMove}
       onMouseLeave={tilt.onMouseLeave}
@@ -284,145 +300,132 @@ const CompactCard = ({ project, idx }) => {
           rotateX: tilt.rotateX,
           rotateY: tilt.rotateY,
           transformStyle: 'preserve-3d',
-          position: 'relative',
-          borderRadius: '20px',
-          overflow: 'hidden',
-          border: `1px solid ${hovered ? project.color + '35' : 'rgba(255,255,255,0.05)'}`,
-          background: '#0a0f1e',
-          boxShadow: hovered
-            ? `0 16px 48px rgba(0,0,0,0.4), 0 0 40px ${project.color}10`
-            : '0 4px 20px rgba(0,0,0,0.25)',
-          transition: 'box-shadow 0.3s ease, border-color 0.3s ease',
-          cursor: 'default',
         }}
+        className="glass-panel cyber-border rounded-2xl overflow-hidden h-full flex flex-col justify-between"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        {/* Image strip */}
-        <div style={{ position: 'relative', height: '160px', overflow: 'hidden' }}>
-          <motion.div
-            animate={{ scale: hovered ? 1.07 : 1 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            style={{ width: '100%', height: '100%' }}
-          >
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              sizes="(max-width: 768px) 100vw, 33vw"
-              style={{ objectFit: 'cover' }}
-            />
-          </motion.div>
-          <div style={{
-            position: 'absolute', inset: 0,
-            background: `linear-gradient(180deg, ${project.color}10 0%, #0a0f1e 100%)`,
-          }} />
-
-          {/* Hover shimmer line */}
-          {hovered && (
+        <div>
+          {/* Imagestrip */}
+          <div className="relative h-40 overflow-hidden bg-slate-950/20">
             <motion.div
-              initial={{ x: '-100%' }}
-              animate={{ x: '200%' }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
-              style={{
-                position: 'absolute', top: 0, left: 0, bottom: 0,
-                width: '40%',
-                background: `linear-gradient(90deg, transparent, ${project.color}20, transparent)`,
-                pointerEvents: 'none',
-              }}
-            />
-          )}
+              animate={{ scale: hovered ? 1.05 : 1 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="w-full h-full relative"
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                style={{ objectFit: 'cover' }}
+                className="opacity-90 dark:opacity-75"
+              />
+            </motion.div>
 
-          <div style={{
-            position: 'absolute', top: '12px', left: '12px',
-            padding: '3px 10px', borderRadius: '999px',
-            background: 'rgba(0,0,0,0.7)',
-            border: `1px solid ${project.color}30`,
-            fontSize: '10px', fontWeight: 600,
-            color: project.color, letterSpacing: '0.06em',
-            backdropFilter: 'blur(6px)',
-          }}>
-            {project.category}
+            {/* Gradient overlays */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
+
+            {/* Hover shimmer line */}
+            {hovered && (
+              <motion.div
+                initial={{ x: '-100%' }}
+                animate={{ x: '200%' }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+                className="absolute top-0 bottom-0 left-0 w-[40%] pointer-events-none"
+                style={{
+                  background: `linear-gradient(90deg, transparent, ${project.color}25, transparent)`,
+                }}
+              />
+            )}
+
+            {/* Category badge */}
+            <div 
+              className="absolute top-3 left-3 px-2.5 py-0.5 rounded-lg text-[9px] font-bold uppercase tracking-wider border backdrop-blur-md"
+              style={{
+                background: `${project.color}15`,
+                borderColor: `${project.color}35`,
+                color: project.color,
+              }}
+            >
+              {project.category}
+            </div>
+          </div>
+
+          {/* Card body */}
+          <div className="p-5 space-y-3">
+            <div className="flex items-center gap-2">
+              <motion.div
+                animate={{ opacity: hovered ? 1 : 0.4, width: hovered ? '16px' : '6px' }}
+                transition={{ duration: 0.3 }}
+                className="h-1 rounded-full flex-shrink-0"
+                style={{ background: project.color }}
+              />
+              <h3 className="text-base font-bold text-slate-800 dark:text-slate-100 truncate">{project.title}</h3>
+            </div>
+
+            <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-2">
+              {project.description}
+            </p>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-1">
+              {project.tags.slice(0, 3).map((tag) => (
+                <span 
+                  key={tag} 
+                  className="text-[9px] font-semibold px-2 py-0.5 rounded-md border text-slate-500 dark:text-slate-400 transition-colors"
+                  style={{
+                    background: 'rgba(120,120,120,0.03)',
+                    borderColor: 'rgba(120,120,120,0.08)',
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+              {project.tags.length > 3 && (
+                <span 
+                  className="text-[9px] font-bold px-2 py-0.5 rounded-md border"
+                  style={{
+                    background: `${project.color}10`,
+                    borderColor: `${project.color}20`,
+                    color: project.color,
+                  }}
+                >
+                  +{project.tags.length - 3}
+                </span>
+              )}
+            </div>
           </div>
         </div>
 
-        {/* Content */}
-        <div style={{ padding: '18px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-            <motion.div
-              animate={{ opacity: hovered ? 1 : 0.4, width: hovered ? '20px' : '8px' }}
-              transition={{ duration: 0.3 }}
-              style={{ height: '2px', borderRadius: '1px', background: project.color, flexShrink: 0 }}
-            />
-            <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#f1f5f9' }}>{project.title}</h3>
-          </div>
-
-          <p style={{ color: '#475569', fontSize: '12.5px', lineHeight: 1.65, marginBottom: '14px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-            {project.description}
-          </p>
-
-          {/* Tags — show max 3 */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: '14px' }}>
-            {project.tags.slice(0, 3).map((tag) => (
-              <span key={tag} style={{
-                fontSize: '10px', fontWeight: 500,
-                padding: '2px 8px', borderRadius: '999px',
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.07)',
-                color: '#475569',
-              }}>
-                {tag}
-              </span>
-            ))}
-            {project.tags.length > 3 && (
-              <span style={{
-                fontSize: '10px', fontWeight: 500,
-                padding: '2px 8px', borderRadius: '999px',
-                background: `${project.color}10`,
-                border: `1px solid ${project.color}20`,
-                color: project.color,
-              }}>
-                +{project.tags.length - 3}
-              </span>
-            )}
-          </div>
-
-          {/* Links */}
-          <div style={{ display: 'flex', gap: '8px' }}>
+        {/* Action links */}
+        <div className="p-5 pt-0">
+          <div className="h-[1px] bg-slate-200 dark:bg-white/5 mb-3" />
+          <div className="flex gap-2">
             <motion.a
               href={project.projectLink}
               target="_blank"
               rel="noreferrer"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02, y: -0.5 }}
+              className="flex-1 py-1.5 rounded-xl font-bold text-[11px] flex items-center justify-center gap-1.5 border no-underline transition-all"
               style={{
-                flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
-                padding: '7px',
-                borderRadius: '9px',
                 background: `${project.color}15`,
-                border: `1px solid ${project.color}25`,
-                color: project.color, fontSize: '12px', fontWeight: 600,
-                textDecoration: 'none',
+                borderColor: `${project.color}25`,
+                color: project.color,
               }}
             >
-              <HiExternalLink style={{ fontSize: '13px' }} />
+              <HiExternalLink className="w-3.5 h-3.5" />
               Demo
             </motion.a>
+            
             <motion.a
               href={project.codeLink}
               target="_blank"
               rel="noreferrer"
-              whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.07)' }}
-              style={{
-                flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
-                padding: '7px',
-                borderRadius: '9px',
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(255,255,255,0.07)',
-                color: '#475569', fontSize: '12px',
-                textDecoration: 'none',
-              }}
+              whileHover={{ scale: 1.02, y: -0.5 }}
+              className="flex-1 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 font-semibold text-[11px] flex items-center justify-center gap-1.5 no-underline transition-all"
             >
-              <HiCode style={{ fontSize: '13px' }} />
+              <HiCode className="w-3.5 h-3.5" />
               Code
             </motion.a>
           </div>
@@ -441,49 +444,43 @@ const Projects = () => {
 
       {/* Section header */}
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mb-14"
+        transition={{ duration: 0.5 }}
+        className="mb-12"
       >
-        <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full mb-4"
-          style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)' }}
-        >
-          <span style={{ color: '#818cf8', fontSize: '13px', fontWeight: 500, letterSpacing: '0.04em' }}>
+        <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-xl border border-white/20 dark:border-white/5 bg-white/45 dark:bg-slate-900/40 backdrop-blur-md mb-4">
+          <span className="text-[12px] font-semibold text-slate-700 dark:text-indigo-300 uppercase tracking-wider">
             🚀 Selected Work
           </span>
         </div>
+        
         <div className="flex flex-wrap justify-between items-end gap-4">
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-3"
-              style={{
-                background: 'linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%)',
-                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-              }}
-            >
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-2">
               Featured Projects
             </h2>
-            <p style={{ color: '#475569', fontSize: '0.95rem' }}>
+            <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base">
               Real-world products I designed, built, and shipped.
             </p>
           </div>
-          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#6366f1', boxShadow: '0 0 6px #6366f1' }} />
-            <span style={{ fontSize: '13px', color: '#334155' }}>{projects.length} projects</span>
+          <div className="flex items-center gap-2 border border-slate-200 dark:border-white/5 bg-slate-100/50 dark:bg-white/5 py-1.5 px-3 rounded-lg text-xs font-semibold text-slate-500 dark:text-slate-400">
+            <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
+            <span>{projects.length} Projects Total</span>
           </div>
         </div>
       </motion.div>
 
-      {/* Featured row — 2 large cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      {/* Featured row — large cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-6">
         {featured.map((project, idx) => (
           <FeaturedCard key={idx} project={project} idx={idx} />
         ))}
       </div>
 
-      {/* Rest — 4 compact cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      {/* Rest — compact cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {rest.map((project, idx) => (
           <CompactCard key={idx} project={project} idx={idx + featured.length} />
         ))}
@@ -491,35 +488,26 @@ const Projects = () => {
 
       {/* Bottom CTA */}
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        style={{ textAlign: 'center', marginTop: '48px' }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="text-center mt-12"
       >
         <motion.a
           href="https://github.com/SyedHuzaifaNazim"
           target="_blank"
           rel="noreferrer"
-          whileHover={{ scale: 1.04, boxShadow: '0 0 32px rgba(99,102,241,0.3)' }}
-          whileTap={{ scale: 0.96 }}
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: '10px',
-            padding: '13px 32px',
-            borderRadius: '14px',
-            background: 'rgba(99,102,241,0.08)',
-            border: '1px solid rgba(99,102,241,0.25)',
-            color: '#818cf8', fontSize: '14px', fontWeight: 600,
-            textDecoration: 'none',
-            letterSpacing: '0.02em',
-          }}
+          whileHover={{ scale: 1.03, y: -2 }}
+          whileTap={{ scale: 0.97 }}
+          className="inline-flex items-center gap-2 px-8 py-3 rounded-xl border border-indigo-500/20 dark:border-indigo-400/20 bg-indigo-500/10 hover:bg-indigo-500/15 text-indigo-600 dark:text-indigo-300 font-bold text-sm tracking-wide no-underline transition-all"
         >
-          <HiCode style={{ fontSize: '18px' }} />
+          <HiCode className="w-4.5 h-4.5" />
           View All on GitHub
           <motion.span
             animate={{ x: [0, 4, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            style={{ display: 'inline-block' }}
+            className="inline-block"
           >
             →
           </motion.span>
