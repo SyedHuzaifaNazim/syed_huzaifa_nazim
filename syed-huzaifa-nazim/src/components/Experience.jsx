@@ -4,16 +4,27 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { HiBriefcase, HiCalendar, HiCpuChip } from 'react-icons/hi2';
 
 const experiences = [
+    {
+    role: 'AI Engineer Intern - Bootcamp 6.0',
+    company: 'Saylani Mass IT Training',
+    period: '2026 - Present',
+    type: 'Full-time',
+    status: 'current',
+    description: 'Developed and deployed AI-driven solutions for various business applications. Implemented machine learning models to enhance data analysis and decision-making processes.',
+    achievements: ['Developed a predictive analytics model that improved sales forecasting accuracy by 25%', 'Implemented a natural language processing system for customer support, reducing response time by 30%', 'Collaborated with cross-functional teams to integrate AI solutions into existing workflows'],
+    tech: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'AWS', 'Docker'],
+    color: 'var(--accent)',
+  },
   {
     role: 'Full Stack Developer',
     company: 'Tax Filerz & Co.',
-    period: '2025 - Present',
+    period: '2025 - 2026',
     type: 'Full-time',
-    status: 'current',
+    status: 'past',
     description: 'Lead development team building enterprise applications. Implemented CI/CD pipelines and improved deployment processes, reducing deployment time by 40%.',
     achievements: ['Built scalable REST APIs serving 10k+ requests/day', 'Reduced load time by 60% through optimization', 'Mentored 2 junior developers'],
     tech: ['React', 'Node.js', 'MongoDB', 'AWS', 'Docker'],
-    color: 'var(--primary)',
+    color: 'var(--secondary)',
   },
   {
     role: 'Frontend Developer',
