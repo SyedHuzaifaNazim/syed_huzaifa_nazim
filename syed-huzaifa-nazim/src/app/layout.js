@@ -39,6 +39,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/328.jpg" />
+      </head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta name="google-site-verification" content="Cn6PIfbD-Bu0iHz614g5L8fN7ugvKEy-sT8jp9Vw7TU" />
       <body className="bg-white dark:bg-slate-900 transition-colors duration-300">
         <ThemeContextProvider>
