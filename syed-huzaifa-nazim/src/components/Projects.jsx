@@ -41,6 +41,17 @@ const projects = [
     featured: true,
   },
   {
+    title: 'Interviewer.ai',
+    description: 'An AI-powered interview preparation platform that generates personalized questions and provides real-time feedback using advanced NLP techniques.',
+    tags: ['Python', 'YOLOv8', 'OpenCV', 'NumPy', 'SciPy', 'PyTorch', 'Computer Vision'],
+    image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&w=800&q=80',
+    codeLink: 'https://github.com/SyedHuzaifaNazim/Interviewer.AI',
+    projectLink: 'https://github.com/SyedHuzaifaNazim/Interviewer.AI',
+    category: 'AI / ML',
+    color: '#f97316',
+    featured: true,
+  },
+  {
     title: 'Driver Assistance Pipeline',
     description: 'An advanced AI computer vision pipeline integrating YOLOv8 nano for real-time vehicle tracking, classical Canny/Hough transform lane detection, velocity estimation, and dynamic collision proximity warning HUD overlays.',
     tags: ['Python', 'YOLOv8', 'OpenCV', 'NumPy', 'SciPy', 'PyTorch', 'Computer Vision'],
