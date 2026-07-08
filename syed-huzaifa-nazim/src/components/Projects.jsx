@@ -463,7 +463,7 @@ const Projects = () => {
       >
         <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-xl border border-white/20 dark:border-white/5 bg-white/45 dark:bg-slate-900/40 backdrop-blur-md mb-4">
           <span className="text-[12px] font-semibold text-slate-700 dark:text-indigo-300 uppercase tracking-wider">
-            🚀 Selected Work
+            Selected Work
           </span>
         </div>
         

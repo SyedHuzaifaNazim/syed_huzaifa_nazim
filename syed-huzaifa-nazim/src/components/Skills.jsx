@@ -165,7 +165,7 @@ const Skills = () => {
         <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-xl border border-white/20 dark:border-white/5 bg-white/45 dark:bg-slate-900/40 backdrop-blur-md">
           <HiCommandLine className="text-indigo-600 dark:text-indigo-400 w-4.5 h-4.5" />
           <span className="text-[12px] font-semibold text-slate-700 dark:text-indigo-300 uppercase tracking-wider">
-            ⚡ Technical Arsenal
+           Technical Arsenal
           </span>
         </div>
         <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
