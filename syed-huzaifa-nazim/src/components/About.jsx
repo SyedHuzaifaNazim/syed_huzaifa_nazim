@@ -3,7 +3,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { HiSparkles, HiLocationMarker, HiMail, HiAcademicCap, HiCode } from 'react-icons/hi';
 import Image from 'next/image';
-import image from '../../public/assets/WhatsApp Image 2024-09-08 at 01.06.06_421cc77c.jpg';
+import image from '../../public/assets/headshot.png';
 
 // 3D tilt hook
 const useTilt = () => {
